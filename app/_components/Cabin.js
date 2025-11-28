@@ -6,18 +6,27 @@ function Cabin({ cabin }) {
   const { id, name, maxCapacity, regularPrice, discount, image, description } =
     cabin;
   return (
-    <div className="grid grid-cols-[3fr_4fr] gap-20 border border-primary-800 py-3 px-10 mb-24">
-      <div className="relative scale-[1.15] -translate-x-3">
+    <div className="grid md:grid-cols-[3fr_4fr] gap-3 md:gap-20 border border-primary-800 py-3 px-10 mb-24">
+      {/* <div className="relative md:scale-[1.15] md:-translate-x-3">
         <Image
           src={image}
           alt={`Cabin ${name}`}
           fill
           className="object-cover"
         />
+        <Image
+          src={image}
+          alt={`Cabin ${name}`}
+          fill
+          className="object-contain"
+        />
+      </div> */}
+      <div className="relative w-full scale-[1.4] aspect-video md:aspect-auto  md:scale-[1.15] md:-translate-x-3">
+        <Image src={image} alt={`Cabin ${name}`} fill className="w-full" />
       </div>
 
       <div>
-        <h3 className="text-accent-100 font-black text-7xl mb-5 translate-x-[-254px] bg-primary-950 p-6 pb-1 w-[150%]">
+        <h3 className="text-accent-100 font-black text-2xl translate-y-[-2px] p-2 w-[120%] md:text-7xl mb-5 md:translate-x-[-254px] bg-primary-950 md:p-6 pb-1 md:w-[150%]">
           Cabin {name}
         </h3>
 
